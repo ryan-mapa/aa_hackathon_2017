@@ -8,6 +8,9 @@
 
 
 User.destroy_all
+Classroom.destroy_all
+Enrollment.destroy_all
+Assignment.destroy_all
 
 teacher_one = User.create(
   first_name: "Chris",
