@@ -1,11 +1,12 @@
 import React from 'react';
 import { TabNavigator } from 'react-navigation';
+import Me from './me.js'
 
 const Dashboard = TabNavigator(
   {
-  Me: {screen: Me},
-  myGroup: {screen: Locations},
-  myClass: {screen: Maps}
+  myGroup: {screen: Me},
+  // myGroup: {screen: Locations},
+  // myClass: {screen: Maps}
   }
 );
 
