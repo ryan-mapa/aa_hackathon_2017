@@ -1,4 +1,4 @@
-import * as GroupActions from '../actions/GroupActions';
+// import * as GroupActions from '../actions/GroupActions';
 
 const GroupsReducer = (state = {}, action) => {
   Object.freeze(state);
