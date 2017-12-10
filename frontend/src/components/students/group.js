@@ -2,7 +2,7 @@
 import React from 'react';
 import { Text, View } from 'react-native'
 
-class Me extends React.Component {
+class Group extends React.Component {
   constructor(props){
     super(props)
     
@@ -24,4 +24,4 @@ const styles = {
     padding: 10,
   }
 }
-export default Me
+export default Groups
