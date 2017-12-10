@@ -18,7 +18,7 @@ class Api::ClassroomsController < ApplicationController
   end
 
   def show
-    @classroom = Classroom.find_by(params[:id])
+    @classroom = Classroom.find_by(id: params[:id])
     if @classroom
       render :show
     else
