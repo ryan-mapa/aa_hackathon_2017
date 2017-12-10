@@ -11,6 +11,8 @@
 #  is_instructor   :boolean          not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  class_id        :integer
+#  group_id        :integer
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
