@@ -14,31 +14,38 @@ teacher_one = User.create(
   last_name: "Kim",
   username: "chrisykim",
   password: "password",
-  is_instructor: true
+  is_instructor: true,
+  class_id: 1
 )
+
+class_one = Classroom.create(
+  name: "july2017",
+  instructor_id: teacher_one.id,
+)
+
 student_one = User.create!(
   first_name: "Julie",
   last_name: "Lin",
   username: "jlin",
-  password: "password"
+  password: "password",
+  class_id: class_one.id
 )
 student_two = User.create(
   first_name: "David",
   last_name: "Banks",
   username: "dbanks",
-  password: "password"
+  password: "password",
+  class_id: class_one.id
 )
 student_three = User.create(
   first_name: "Ryan",
   last_name: "Mapa",
   username: "rmapa",
-  password: "password"
+  password: "password",
+  class_id: class_one.id
 )
 
-class_one = Classroom.create(
-  name: "july2017",
-  instructor_id: teacher_one.id
-)
+
 
 User.where(is_instructor: false).each do |student|
   Enrollment.create(
@@ -46,3 +53,5 @@ User.where(is_instructor: false).each do |student|
     class_id: class_one.id
   )
 end
+
+A
