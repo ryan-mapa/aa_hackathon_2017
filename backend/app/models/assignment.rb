@@ -13,21 +13,21 @@
 #
 
 class Assignment < ApplicationRecord
-  
-  validates :name, :point_value presence: true
-  
+
+  validates :name, :point_value, presence: true
+
   belongs_to :classroom,
     primary_key: :id,
     foreign_key: :class_id,
     class_name: :Classroom
-    
+
   has_many :tasks,
     primary_key: :id,
     foreign_key: :assignment_id,
     class_name: :Task
-    
-  has_many :students, 
+
+  has_many :students,
     through: :tasks,
     source: :student
-  
+
 end
