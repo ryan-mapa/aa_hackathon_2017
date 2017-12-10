@@ -46,7 +46,6 @@ student_three = User.create(
 )
 
 
-
 User.where(is_instructor: false).each do |student|
   Enrollment.create(
     student_id: student.id,
@@ -54,4 +53,14 @@ User.where(is_instructor: false).each do |student|
   )
 end
 
-A
+assignment_one = Assignment.create(
+  name: "Family Tree Project",
+  description: "Build out your family tree like we did in class the today. Talk to your parents and have them help you fill it out.",
+  class_id: class_one.id
+)
+
+assignment_two = Assignment.create(
+  name: "30 Minutes Silent Reading",
+  description: "Continue reading My Father's Dragon for 30 minutes.",
+  class_id: class_one.id
+)
