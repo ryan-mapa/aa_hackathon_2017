@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { Text, View} from 'react-native';
+import { Text, View, StyleSheet} from 'react-native';
 import Dashboard from './students/dashboard.js';
 import LoginContainer from './login_container.js';
 
@@ -11,7 +11,7 @@ class Entry extends React.Component {
   }
 
   render() {
-    const newPage = this.props.session.currentUser ? <Dashboard currentUser={this.props.currentUser}/> : <LoginContainer />;
+    const newPage = this.props.session.currentUser ? <Dashboard screenProps={{currentUser: this.props.session.currentUser}}/> : <LoginContainer />;
     return(
       <View style={styles.container}>{newPage}</View>
     );
