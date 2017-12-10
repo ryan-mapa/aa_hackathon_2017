@@ -11,7 +11,7 @@ class Entry extends React.Component {
   }
 
   render() {
-    const newPage = this.props.session.currentUser ? <Dashboard /> : <LoginContainer />;
+    const newPage = this.props.session.currentUser ? <Dashboard currentUser={this.props.currentUser}/> : <LoginContainer />;
     return(
       <View style={styles.container}>{newPage}</View>
     );
