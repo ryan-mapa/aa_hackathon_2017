@@ -14,7 +14,7 @@ class App extends Component {
     return (
       <Provider store={createStore(RootReducer, {}, applyMiddleware(thunk, logger))}>
         <View>
-          <LoginContainer/>
+          <Entry/>
         </View>
       </Provider>
     );
