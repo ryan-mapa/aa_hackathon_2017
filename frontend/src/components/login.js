@@ -19,6 +19,7 @@ class Login extends Component {
 
   loginExistingUser(e) {
       e.preventDefault();
+      console.log("login existing user");
       const user = this.state;
       this.props.login(user);
    }
