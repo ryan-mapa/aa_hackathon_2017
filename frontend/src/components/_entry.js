@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Root } from '../config/router';
+
 import { Text, View} from 'react-native';
-import Dashboard from './students/dashboard';
-import LoginContainer from './auth/login';
+import Dashboard from './students/dashboard.js';
+import LoginContainer from './login_container.js';
 
 class Entry extends React.Component {
   constructor(props) {
