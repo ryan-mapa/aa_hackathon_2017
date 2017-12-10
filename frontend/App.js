@@ -5,7 +5,9 @@ import { logger } from 'redux-logger';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import RootReducer from './src/reducers/root_reducer';
-import LoginContainer from './src/components/login_container';
+// import LoginContainer from './src/components/login_container';
+import Entry from './src/components/_entry.js'
+
 
 class App extends Component {
   render() {
