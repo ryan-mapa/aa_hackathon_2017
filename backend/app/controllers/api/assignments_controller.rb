@@ -14,7 +14,7 @@ class Api::AssignmentsController < ApplicationController
   end
 
   def show
-    @assignment = Assignment.find_by(params[:id])
+    @assignment = Assignment.find_by(id: params[:id])
     if @assignment
       render :show
     else
