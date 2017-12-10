@@ -16,10 +16,14 @@ class Group < ApplicationRecord
     foreign_key: :class_id,
     class_name: :Classroom
   
-  has_many :students,
+  has_many :memberships,
     primary_key: :id,
     foreign_key: :group_id,
-    class_name: :User
+    class_name: :Membership
+    
+  has_many :students,
+    through: :memberships,
+    source: :student
     
   has_many :tasks,
     through: :students,
