@@ -16,6 +16,8 @@ class Assignment < ApplicationRecord
 
   validates :name, :point_value, presence: true
 
+  after_save :make_tasks
+
   belongs_to :classroom,
     primary_key: :id,
     foreign_key: :class_id,
@@ -29,5 +31,11 @@ class Assignment < ApplicationRecord
   has_many :students,
     through: :tasks,
     source: :student
+
+  def make_tasks
+    self.classroom.students.each do |student|
+      Task.create({assignment_id: self.id, student_id: student.id})
+    end
+  end
 
 end
