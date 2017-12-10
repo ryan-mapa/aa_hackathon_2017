@@ -8,6 +8,6 @@ Rails.application.routes.draw do
     resources :groups, only: %i(create show index)
     resources :memberships, only: %i(create)
     resources :assignments, only: %i(create show index)
-    resources :tasks, only: %i(create)
+    resources :tasks, only: %i(create index)
   end
 end

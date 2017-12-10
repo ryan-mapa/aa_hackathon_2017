@@ -2,6 +2,9 @@ class Api::AssignmentsController < ApplicationController
   def create
     @assignment = Assignment.new(assignment_params)
     if @assignment.save
+      @assignment.students.each do |student|
+        Task.create(assignment_id: @assignment.id, student_id: student.id)
+      end
       render :show
     else
       render json: @assignment.errors.full_messages, status: 422
