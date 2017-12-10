@@ -26,11 +26,6 @@ class User < ApplicationRecord
   attr_reader :password
   
   ### associations ###
-  belongs_to :classroom,
-    primary_key: :id,
-    foreign_key: :class_id,
-    class_name: :Classroom
-    
   belongs_to :group,
     primary_key: :id,
     foreign_key: :group_id,
@@ -45,6 +40,15 @@ class User < ApplicationRecord
     primary_key: :id,
     foreign_key: :student_id,
     class_name: :Task
+    
+  has_many :enrollments,
+    primary_key: :id,
+    foreign_key: :student_id,
+    class_name: :Enrollment
+  
+  has_many :classrooms,
+    through: :enrollments,
+    source: :classroom
     
   has_many :assignments,
     through: :classrooms,

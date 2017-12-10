@@ -28,9 +28,13 @@ class Classroom < ApplicationRecord
     foreign_key: :class_id,
     class_name: :Group
   
-  has_many :students,
+  has_many :enrollments,
     primary_key: :id,
     foreign_key: :class_id,
-    class_name: :User
+    class_name: :Enrollment
+    
+  has_many :students,
+    through: :enrollments,
+    source: :student
   
 end
